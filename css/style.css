@@ -21,7 +21,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .nav .inner {
@@ -110,6 +110,8 @@
 
 .main {
     padding-top: 64px;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -339,38 +341,90 @@
 /* COMENT */
 .comment {
     padding-top: 100px !important;
+}
+
+.comment .inner {
     position: relative;
 }
 
-.comment .right_area {
-    background: #f6f6f6;
-    width: 100%;
-    max-width: 1064px;
-    height: 500px;
-    margin-top: 50px;
-}
-
-/* 
-
 .comment .left_area {
-    position: absolute;
+    position: relative;
     left: 0;
+    width: 50%;
+    z-index: 1;
 }
 
 .comment .left_area figure {
     width: 100%;
 }
 
-.comment .left_area figure img {
-    object-fit: cover;
+.comment .right_area {
+    background: #f6f6f6;
+    width: 96%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 0;
 }
 
+.comment .right_area .txt_wrap {
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    transform: translateY(-50%);
+}
 
-*/
+.comment .right_area .txt_wrap em {
+    display: block;
+    background: url(../images/quotation.svg) no-repeat;
+    background-size: cover;
+    width: 28px;
+    height: 20px;
+    margin-bottom: 30px;
+}
+
+.comment .right_area .txt_wrap .title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    cursor: default;
+}
+
+.comment .right_area .txt_wrap .title strong {
+    font-size: 1.9em;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    width: 330px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment .right_area .txt_wrap .title span {
+    font-size: 1em;
+    color: #888;
+}
+
+.comment .swiper-pagination-bullet {
+    background: #000;
+    width: 35px;
+    height: 5px;
+    border: none;
+    border-radius: 0;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #454545;
+    opacity: 1;
+    box-shadow: 0 0 5px #000;
+}
 
 /* WITHIOPE */
 .withiope {
     padding-top: 100px !important;
+    position: relative;
 }
 
 .withiope .txt_wrap {
@@ -389,9 +443,128 @@
     color: #888;
 }
 
-.withiope ul {
-    display: flex;
+.withiope .mySwiper {
     width: 100%;
+    max-width: 950px;
+}
+
+.withiope ul {
+    width: 1100px;
+    display: flex;
+}
+
+.withiope li {
+    background: #eee;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.withiope li.on .tag {
+    bottom: 0;
+}
+
+.withiope li figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.withiope li img {
+    position: absolute;
+    top: 0;
+    transition: .4s;
+}
+
+.withiope li.on img {
+    position: absolute;
+    top: -18px;
+}
+
+.withiope li .tag {
+    position: absolute;
+    bottom: -60px;
+    background: #fff;
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    padding: 10px;
+    transition: .3s;
+    border: 1px solid #eee;
+}
+
+.withiope li .tag a {
+    font-size: .9em;
+    color: #323a45;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.withiope li .tag p {
+    font-size: .8em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #4d5865;
+}
+
+.withiope .swiper-button-next,
+.withiope .swiper-rtl .swiper-button-prev {
+    position: absolute;
+    right: 10px !important;
+    top: 76% !important;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    position: absolute;
+    left: 10px !important;
+    top: 76% !important;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+    content: '' !important;
+    display: block;
+    background: url(../images/SlidePrev.png) no-repeat !important;
+    background-size: 20px 40px !important;
+    width: 20px;
+    height: 40px;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    content: '' !important;
+    display: block;
+    background: url(../images/SlideNext.png) no-repeat !important;
+    background-size: 20px 40px !important;
+    width: 20px;
+    height: 40px;
+}
+
+.withiope .swiper-button-next:hover {
+    background: rgba(0, 0, 0, 0.05);
+    height: 70px;
+    border-radius: 4px;
+}
+
+.withiope .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.05);
+    height: 70px;
+    border-radius: 4px;
+}
+
+/* footer */
+.footer {
+    position: relative;
+    z-index: 2;
 }
 
 /* media */
