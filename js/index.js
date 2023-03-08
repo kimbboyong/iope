@@ -14,8 +14,22 @@ $('.withiope li').hover(function () {
     }
 })
 
-
 // swiper
+var swiper = new Swiper(".best_seller .mySwiper", {
+    slidesPerView: 'auto',
+    slidesPerGroupSkip: 1,
+    keyboard: {
+        enabled: true,
+    },
+    scrollbar: {
+        el: ".best_seller .swiper-scrollbar",
+    },
+    navigation: {
+        nextEl: ".best_seller .swiper-button-next",
+        prevEl: ".best_seller .swiper-button-prev",
+    },
+});
+
 var swiper = new Swiper(".comment .mySwiper", {
     pagination: {
         el: ".comment .swiper-pagination",
