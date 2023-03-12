@@ -5,7 +5,6 @@ $('.best_seller .list li').hover(function () {
         $(this).addClass('on');
     }
 })
-
 $('.withiope li').hover(function () {
     if ($(this).hasClass('on')) {
         $(this).removeClass('on');
@@ -14,7 +13,47 @@ $('.withiope li').hover(function () {
     }
 })
 
+
+$('.side_bar .center .item > a').click(function () {
+
+    const $parentThis = $(this).parent('.item');
+    const $thisSub = $(this).siblings('.sub_item');
+
+    const itemH = $parentThis.height();
+    const subLen = $(this).siblings('.sub_item').children('li').length;
+
+    const subH = itemH * subLen;
+
+    if ($thisSub.hasClass('on')) {
+        $thisSub.removeClass('on');
+        $thisSub.css('height', 0);
+    } else {
+        $('.side_bar .center .item .sub_item').css('height', 0);
+        $thisSub.addClass('on');
+        $thisSub.css('height', subH);
+    }
+
+})
+
 // swiper
+var swiper = new Swiper(".banner .mySwiper", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    effect: 'fade',
+    // autoplay: {
+    //     delay: 3000,
+    // },
+    pagination: {
+        el: ".banner .swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".banner .swiper-button-next",
+        prevEl: ".banner .swiper-button-prev",
+    },
+
+});
+
 var swiper = new Swiper(".best_seller .mySwiper", {
     slidesPerView: 'auto',
     slidesPerGroupSkip: 1,
