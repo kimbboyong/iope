@@ -13,8 +13,7 @@ $('.withiope li').hover(function () {
     }
 })
 
-
-$('.side_bar .center .item > a').click(function () {
+$('.side_bar .center .item .title').click(function () {
 
     const $parentThis = $(this).parent('.item');
     const $thisSub = $(this).siblings('.sub_item');
@@ -24,15 +23,31 @@ $('.side_bar .center .item > a').click(function () {
 
     const subH = itemH * subLen;
 
+    let plusIco = $(this).children('em');
+    $('.side_bar .center .item .title em ').removeClass('on');
+
     if ($thisSub.hasClass('on')) {
         $thisSub.removeClass('on');
         $thisSub.css('height', 0);
     } else {
         $('.side_bar .center .item .sub_item').css('height', 0);
+        $('.side_bar .center .item .sub_item').removeClass('on');
         $thisSub.addClass('on');
         $thisSub.css('height', subH);
+        PlusAdd()
     }
 
+    function PlusAdd() {
+        if (itemH > 0) {
+            $(plusIco).addClass('on');
+        }
+    }
+
+    function PlusRemove() {
+        if (0 > itemH) {
+            $(plusIco).removeClass('on');
+        }
+    }
 })
 
 // swiper
@@ -40,9 +55,9 @@ var swiper = new Swiper(".banner .mySwiper", {
     slidesPerView: 1,
     centeredSlides: true,
     effect: 'fade',
-    // autoplay: {
-    //     delay: 3000,
-    // },
+    autoplay: {
+        delay: 3000,
+    },
     pagination: {
         el: ".banner .swiper-pagination",
         clickable: true,
@@ -77,13 +92,12 @@ var swiper = new Swiper(".comment .mySwiper", {
 });
 
 var swiper = new Swiper(".withiope .mySwiper", {
-    loop: true,
     slidesPerView: 'auto',
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
     spaceBetween: 15,
-    breakpoints: { //반응형 조건 속성
-        640: { //640 이상일 경우
-            slidesPerGroup: 1, //레이아웃 2열
+    breakpoints: {
+        640: {
+            slidesPerGroup: 1,
         },
         768: {
             slidesPerGroup: 2,
@@ -97,3 +111,13 @@ var swiper = new Swiper(".withiope .mySwiper", {
         prevEl: ".withiope .swiper-button-prev",
     },
 });
+
+function sideOepn() {
+    $('.side_bar').addClass('on');
+    $('body').css('overflow', 'hidden');
+}
+
+function sideClose() {
+    $('.side_bar').removeClass('on');
+    $('body').css('overflow', 'visible');
+}
