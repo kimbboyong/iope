@@ -19,6 +19,7 @@ $('.side_bar .center .item .title').click(function () {
     const $thisSub = $(this).siblings('.sub_item');
 
     const itemH = $parentThis.height();
+    console.log(itemH)
     const subLen = $(this).siblings('.sub_item').children('li').length;
 
     const subH = itemH * subLen;
