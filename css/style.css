@@ -511,6 +511,15 @@
     border: 1px solid #222;
     border-radius: 30px;
     color: #222;
+    transition: .4s ease;
+}
+
+.more_btn a:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #333;
+    font-weight: bold;
+    transform: scale(.9);
 }
 
 /* MainBestSeller */
@@ -704,7 +713,13 @@
 .iope_lab .more_btn a {
     background: #fff;
     border: 1px solid #fff;
+    transition: .4s ease;
+}
 
+.iope_lab .more_btn a:hover {
+    background: #333;
+    border: 1px solid #333;
+    color: #fff;
 }
 
 /* COMENT */
@@ -798,6 +813,12 @@
     padding-right: 35px;
 }
 
+.comment .more_btn a:hover {
+    color: #fff;
+    background: #333;
+    border: 1px solid #333;
+}
+
 /* WITHIOPE */
 .withiope {
     padding-top: 100px !important;
@@ -824,104 +845,62 @@
     width: calc(100% - 80px);
 }
 
+.withiope .swiper-wrapper {
+    padding: 10px 0;
+}
+
 .withiope ul {
     display: flex;
 }
 
-.withiope li:nth-child(1) {
-    background: url(../images/withIOPE01.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
+.withiope li {
+    overflow: hidden;
+    background-size: cover !important;
     width: 250px;
     height: 250px;
     position: relative;
-    bottom: 0;
     transition: .4s;
     cursor: pointer;
+}
+
+.withiope li:hover {
+    transform: translateY(-5px);
+}
+
+.withiope li:hover .tag {
+    top: calc(100% - 65px);
+}
+
+.withiope li:nth-child(1) {
+    background: url(../images/withIOPE01.webp) center no-repeat;
 }
 
 .withiope li:nth-child(2) {
-    background: url(../images/withIOPE02.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE02.webp) center no-repeat;
 }
 
 .withiope li:nth-child(3) {
-    background: url(../images/withIOPE03.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE03.webp) center no-repeat;
 }
 
 .withiope li:nth-child(4) {
-    background: url(../images/withIOPE04.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE04.webp) center no-repeat;
 }
 
 .withiope li:nth-child(5) {
-    background: url(../images/withIOPE05.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE05.webp) center no-repeat;
 }
 
 .withiope li:nth-child(6) {
-    background: url(../images/withIOPE06.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE06.webp) center no-repeat;
 }
 
 .withiope li:nth-child(7) {
-    background: url(../images/withIOPE07.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE07.webp) center no-repeat;
 }
 
 .withiope li:nth-child(8) {
-    background: url(../images/withIOPE08.webp) no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    bottom: 0;
-    transition: .4s;
-    cursor: pointer;
+    background: url(../images/withIOPE08.webp) center no-repeat;
 }
 
 .withiope li em {
@@ -936,7 +915,7 @@
 
 .withiope li .tag {
     position: absolute;
-    bottom: -60px;
+    top: 105%;
     background: #fff;
     width: 100%;
     height: 65px;
@@ -946,13 +925,6 @@
     border: 1px solid #eee;
 }
 
-.withiope li.on {
-    bottom: 5px;
-}
-
-.withiope li.on .tag {
-    bottom: 0;
-}
 
 .withiope li .tag a {
     font-size: .9em;
@@ -1036,6 +1008,12 @@
 .brand_story .txt_wrap .more_btn a {
     color: #fff;
     border: 1px solid #fff;
+}
+
+.brand_story .more_btn a:hover {
+    background: #333;
+    border: 1px solid #333;
+    color: #fff;
 }
 
 /* footer */
