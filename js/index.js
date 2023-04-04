@@ -5,13 +5,6 @@ $('.best_seller .list li').hover(function () {
         $(this).addClass('on');
     }
 })
-// $('.withiope li').mouseenter(function () {
-//     $(this).addClass('on');
-// })
-
-// $('.withiope li').mouseleave(function () {
-//     $(this).removeClass('on');
-// })
 
 $('.side_bar .center .item .title').click(function () {
 
